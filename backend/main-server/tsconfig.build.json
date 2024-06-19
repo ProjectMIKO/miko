@@ -1,4 +1,30 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@global/*": ["assets/global/*"],
+      "@component/*": ["component/*"],
+      "@s3/*": ["extern/s3/*"],
+      "@user/*": ["component/user/*"],
+      "@conversation/*": ["component/conversation/*"],
+      "@vertex/*": ["component/vertex/*"],
+      "@edge/*": ["component/edge/*"],
+      "@middleware/*": ["middleware/*"],
+      "@meeting/*": ["component/meeting/*"],
+      "@auth/*": ["auth/*"],
+      "@openvidu/*": ["extern/openvidu/*"]
+    },
+    "include": ["src/**/*", "src/**/*.spec.ts", "eslint.config.js"],
+    "exclude": ["node_modules", "test", "dist"]
+  }
 }

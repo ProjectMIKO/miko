@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 3vh); /* 헤더를 제외한 높이 사용 */
+  overflow: hidden; /* 스크롤 없애기 */
+}
+
+.mainContainer {
+  /* position: relative; */
+  width: 100%;
+  height: 100vh;
+}
+
+.voiceRecorderContainer {
+  width: 15%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 40px;
+  margin-right: 20px;
+  z-index: 11; /* NodeConversation 보다 위에 표시되도록 z-index 설정 */
+  background-color: rgba(249, 249, 249, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.networkGraphContainer {
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 3%); /* 헤더를 제외한 높이 사용 */
+  z-index: 4;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.open {
+  transform: translateX(0); /* 원래 위치로 돌아옴 */
+}
+
+.nodeConversationWrapper {
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+  top: 200px; /* VoiceRecorder 아래에 위치하도록 조정 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(249, 249, 249, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 10; /* VoiceRecorder 아래에 위치하도록 z-index 설정 */
+  overflow-y: hidden; /* 세로 스크롤은 허용 */
+  overflow-x: hidden; /* 가로 스크롤은 허용하지 않음 */
+  height: 60%; /* 헤더를 제외한 높이 사용 */
+  width: 15%;
+}
+
+.keywordButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footerComponents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+  padding: 10px;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.footerRight {
+  display: flex;
+  gap: 10px;
+  margin-right: 50px;
+}
+
+.iconButton {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 45px;
+  color: #96a0fe;
+  transition: color 0.3s ease;
+}
+
+.iconButton:hover {
+  color: #0056b3;
+}
+
+.leaveButton {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 50px;
+  color: #ff0000;
+  transition: color 0.3s ease;
+}
+
+.leaveButton:hover {
+  color: #cc0000;
+}

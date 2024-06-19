@@ -1,11 +1,12 @@
 # Ignore virtual environment
 .venv/
+myenv/
 
 # Ignore Flask specific files
 instance/
 *.pyc
 __pycache__/
-.env
+.env*
 
 # Ignore IDE files
 .vscode/
@@ -19,3 +20,9 @@ __pycache__/
 *.swo
 *.tmp
 *.bak
+
+# Ignore Test Directory
+test/
+
+# IOS
+.DS_Store

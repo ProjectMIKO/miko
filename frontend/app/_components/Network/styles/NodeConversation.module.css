@@ -1,0 +1,78 @@
+.chromeTabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.chromeTab {
+  flex: 1;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  margin-right: 5px;
+  transition: background-color 0.3s, color 0.3s, flex 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chromeTab:last-child {
+  margin-right: 0;
+}
+
+.chromeTabActive {
+  background-color: #96a0fe;
+  color: white;
+  border: 1px solid #96a0fe;
+  border-bottom: 1px solid #fff;
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nodeConversationContainerWrapper {
+  height: 100%; /* 바깥 div의 최대 높이를 제한합니다 */
+  overflow-y: hidden; /* 내부 div에 스크롤을 추가합니다 */
+}
+
+.nodeConversationContainer {
+  flex-grow: 1;
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  overflow-x: hidden; /* 가로 스크롤 막기 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px;
+  max-height: 80vh; /* 내부 컨테이너의 최대 높이를 설정합니다 */
+}
+
+.nodeConversationContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

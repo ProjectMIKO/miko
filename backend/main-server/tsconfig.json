@@ -9,7 +9,20 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src",
+    "paths": {
+      "@global/*": ["assets/global/*"],
+      "@component/*": ["component/*"],
+      "@s3/*": ["extern/s3/*"],
+      "@user/*": ["component/user/*"],
+      "@conversation/*": ["component/conversation/*"],
+      "@vertex/*": ["component/vertex/*"],
+      "@edge/*": ["component/edge/*"],
+      "@middleware/*": ["middleware/*"],
+      "@meeting/*": ["component/meeting/*"],
+      "@auth/*": ["auth/*"],
+      "@openvidu/*": ["extern/openvidu/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -17,5 +30,7 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": ["src/**/*", "eslint.config.js"],
+  "exclude": ["node_modules", "test", "dist"]
 }
